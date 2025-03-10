@@ -9,7 +9,9 @@ import {
   Factory, 
   Landmark, 
   Calendar, 
-  Inspect 
+  Inspect,
+  Phone,
+  Mail
 } from 'lucide-react';
 
 import Navbar from '@/components/Navbar';

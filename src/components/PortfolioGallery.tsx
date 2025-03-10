@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import LazyImage from './LazyImage';
 
