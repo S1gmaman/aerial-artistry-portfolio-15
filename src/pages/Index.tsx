@@ -193,19 +193,20 @@ const Index = () => {
       </Section>
       
       {/* Use Cases Section */}
-      <Section id="use-cases" className="bg-secondary">
+      <Section id="use-cases" className="bg-white">
         <SectionHeading 
           title="Användningsområden" 
           subtitle="Upptäck hur vår drönarfotografering kan hjälpa dig och ditt företag."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {useCases.map((useCase, index) => (
             <UseCaseCard 
               key={index}
               title={useCase.title}
               description={useCase.description}
               icon={useCase.icon}
-              imageSrc={useCase.imageSrc}
+              iconColor={index % 3 === 0 ? "text-blue-400" : 
+                         index % 3 === 1 ? "text-blue-500" : "text-blue-600"}
             />
           ))}
         </div>

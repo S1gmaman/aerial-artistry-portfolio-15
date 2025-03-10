@@ -57,6 +57,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
         },
+        blue: {
+          light: "hsl(var(--blue-light))",
+          DEFAULT: "hsl(var(--blue-default))",
+          dark: "hsl(var(--blue-dark))",
+        },
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
