@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Camera, 
@@ -69,82 +68,7 @@ const Index = () => {
       imageSrc: 'https://images.unsplash.com/photo-1475552113915-6fcb52652ba2?q=80&w=1000&auto=format&fit=crop'
     }
   ];
-
-  // Pricing data
-  const pricingPlans = [
-    {
-      title: 'Grundpaket',
-      price: '2 500',
-      description: 'Perfekt för enkla fotograferingsuppdrag med grundläggande redigering.',
-      features: [
-        { text: 'Upp till 45 minuters flygning', included: true },
-        { text: '20 redigerade högupplösta bilder', included: true },
-        { text: 'Grundläggande redigering', included: true },
-        { text: 'Leverans inom 5 arbetsdagar', included: true },
-        { text: 'Videoinspelning', included: false },
-        { text: 'Tidsförloppsbilder', included: false },
-        { text: 'Expressleverans', included: false }
-      ]
-    },
-    {
-      title: 'Premiumpaket',
-      price: '4 500',
-      description: 'För professionella behov med omfattande fotografering och avancerad redigering.',
-      highlighted: true,
-      features: [
-        { text: 'Upp till 1 timmes flygning', included: true },
-        { text: '40 redigerade högupplösta bilder', included: true },
-        { text: 'Avancerad redigering', included: true },
-        { text: 'Leverans inom 3 arbetsdagar', included: true },
-        { text: '4K videoinspelning (5 min)', included: true },
-        { text: 'Tidsförloppsbilder', included: true },
-        { text: 'Expressleverans', included: false }
-      ]
-    },
-    {
-      title: 'Företagspaket',
-      price: '6 500',
-      description: 'Skräddarsytt för företag med omfattande behov och högsta kvalitet.',
-      features: [
-        { text: 'Upp till 1 timme 30 minuters flygning', included: true },
-        { text: '60+ redigerade högupplösta bilder', included: true },
-        { text: 'Premiumredigering', included: true },
-        { text: 'Leverans inom 2 arbetsdagar', included: true },
-        { text: '4K videoinspelning (10 min)', included: true },
-        { text: 'Tidsförloppsbilder', included: true },
-        { text: 'Expressleverans', included: true }
-      ]
-    }
-  ];
-
-  // FAQ data
-  const faqItems = [
-    {
-      question: 'Vilka områden täcker ni för drönarfotografering?',
-      answer: 'Vi erbjuder våra tjänster inom hela Stockholms län, inklusive kranskommuner. För uppdrag utanför dessa områden, vänligen kontakta oss för en anpassad offert.'
-    },
-    {
-      question: 'Vilka tillstånd behövs för drönarfotografering?',
-      answer: 'Vi följer Transportstyrelsens regler för drönare och har alla nödvändiga tillstånd för kommersiell flygning. Vi flyger inte i flygförbudszoner utan specialtillstånd och respekterar alltid privatlivet genom att inte fotografera in i privata trädgårdar eller bostäder.'
-    },
-    {
-      question: 'Vilken utrustning använder ni?',
-      answer: 'Vi använder professionella DJI-drönare av senaste modell med 4K-kameror som kan ta högupplösta bilder och filmer. Vår utrustning inkluderar även extra batterier för längre flygningar och olika filter för optimala bilder under olika ljusförhållanden.'
-    },
-    {
-      question: 'Hur lång tid tar det att få bilderna efter fotografering?',
-      answer: 'Leveranstiden beror på vilket paket du väljer. Grundpaketet levereras inom 5 arbetsdagar, Premiumpaketet inom 3 arbetsdagar, och Företagspaketet inom 2 arbetsdagar. Expressleverans finns tillgängligt mot extra kostnad.'
-    },
-    {
-      question: 'Kan ni fotografera i dåligt väder?',
-      answer: 'Av säkerhetsskäl och för att säkerställa bästa möjliga bildkvalitet flyger vi inte i regn, snö, dimma eller vid starka vindar. Om vädret inte tillåter flygning på den bokade dagen, kommer vi att omplanera utan extra kostnad.'
-    },
-    {
-      question: 'Är det möjligt att få både bilder och video?',
-      answer: 'Ja, vi erbjuder både fotografi och videoinspelning. Premium- och Företagspaketen inkluderar videoinspelning, och detta kan även läggas till Grundpaketet mot en extra kostnad.'
-    }
-  ];
-
+  
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
@@ -193,20 +117,18 @@ const Index = () => {
       </Section>
       
       {/* Use Cases Section */}
-      <Section id="use-cases" className="bg-white">
+      <Section id="use-cases">
         <SectionHeading 
           title="Användningsområden" 
           subtitle="Upptäck hur vår drönarfotografering kan hjälpa dig och ditt företag."
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
           {useCases.map((useCase, index) => (
             <UseCaseCard 
               key={index}
               title={useCase.title}
               description={useCase.description}
               icon={useCase.icon}
-              iconColor={index % 3 === 0 ? "text-blue-400" : 
-                         index % 3 === 1 ? "text-blue-500" : "text-blue-600"}
             />
           ))}
         </div>
@@ -254,18 +176,49 @@ const Index = () => {
           title="Våra Priser" 
           subtitle="Välj det paket som passar dina behov bäst. Alla priser är inklusive moms."
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {pricingPlans.map((plan, index) => (
-            <PricingCard
-              key={index}
-              title={plan.title}
-              price={plan.price}
-              description={plan.description}
-              features={plan.features}
-              highlighted={plan.highlighted}
+        <PricingCard
+              title= 'Grundpaket'
+              price= '2 500'
+              description= 'Perfekt för enkla fotograferingsuppdrag med grundläggande redigering.'
+              features= {[
+                { text: 'Upp till 45 minuters flygning', included: true },
+                { text: '20 redigerade högupplösta bilder', included: true },
+                { text: 'Grundläggande redigering', included: true },
+                { text: 'Leverans inom 5 arbetsdagar', included: true },
+                { text: 'Videoinspelning', included: false },
+                { text: 'Tidsförloppsbilder', included: false },
+                { text: 'Expressleverans', included: false }
+              ]}
             />
-          ))}
-        </div>
+              <PricingCard
+              title= 'Premiumpaket'
+              price= '4 500'
+              description= 'För professionella behov med omfattande fotografering och avancerad redigering.'
+              highlighted= {true}
+              features= {[
+                { text: 'Upp till 1 timmes flygning', included: true },
+                { text: '40 redigerade högupplösta bilder', included: true },
+                { text: 'Avancerad redigering', included: true },
+                { text: 'Leverans inom 3 arbetsdagar', included: true },
+                { text: '4K videoinspelning (5 min)', included: true },
+                { text: 'Tidsförloppsbilder', included: true },
+                { text: 'Expressleverans', included: false }
+              ]}
+            />
+              <PricingCard
+               title= 'Företagspaket'
+              price= '6 500'
+              description= 'Skräddarsytt för företag med omfattande behov och högsta kvalitet.'
+              features= {[
+                { text: 'Upp till 1 timme 30 minuters flygning', included: true },
+                { text: '60+ redigerade högupplösta bilder', included: true },
+                { text: 'Premiumredigering', included: true },
+                { text: 'Leverans inom 2 arbetsdagar', included: true },
+                { text: '4K videoinspelning (10 min)', included: true },
+                { text: 'Tidsförloppsbilder', included: true },
+                { text: 'Expressleverans', included: true }
+              ]}
+            />
         <p className="text-center text-muted-foreground mt-10">
           Behöver du ett anpassat paket? <a href="#contact" className="text-primary underline">Kontakta oss</a> för en personlig offert.
         </p>
@@ -278,7 +231,30 @@ const Index = () => {
           subtitle="Hitta svar på de vanligaste frågorna om våra drönarfotograferingstjänster."
         />
         <div className="max-w-3xl mx-auto">
-          <FaqAccordion items={faqItems} />
+          <FaqAccordion items={[{
+      question: 'Vilka områden täcker ni för drönarfotografering?',
+      answer: 'Vi erbjuder våra tjänster inom hela Stockholms län, inklusive kranskommuner. För uppdrag utanför dessa områden, vänligen kontakta oss för en anpassad offert.'
+    },
+    {
+      question: 'Vilka tillstånd behövs för drönarfotografering?',
+      answer: 'Vi följer Transportstyrelsens regler för drönare och har alla nödvändiga tillstånd för kommersiell flygning. Vi flyger inte i flygförbudszoner utan specialtillstånd och respekterar alltid privatlivet genom att inte fotografera in i privata trädgårdar eller bostäder.'
+    },
+    {
+      question: 'Vilken utrustning använder ni?',
+      answer: 'Vi använder professionella DJI-drönare av senaste modell med 4K-kameror som kan ta högupplösta bilder och filmer. Vår utrustning inkluderar även extra batterier för längre flygningar och olika filter för optimala bilder under olika ljusförhållanden.'
+    },
+    {
+      question: 'Hur lång tid tar det att få bilderna efter fotografering?',
+      answer: 'Leveranstiden beror på vilket paket du väljer. Grundpaketet levereras inom 5 arbetsdagar, Premiumpaketet inom 3 arbetsdagar, och Företagspaketet inom 2 arbetsdagar. Expressleverans finns tillgängligt mot extra kostnad.'
+    },
+    {
+      question: 'Kan ni fotografera i dåligt väder?',
+      answer: 'Av säkerhetsskäl och för att säkerställa bästa möjliga bildkvalitet flyger vi inte i regn, snö, dimma eller vid starka vindar. Om vädret inte tillåter flygning på den bokade dagen, kommer vi att omplanera utan extra kostnad.'
+    },
+    {
+      question: 'Är det möjligt att få både bilder och video?',
+      answer: 'Ja, vi erbjuder både fotografi och videoinspelning. Premium- och Företagspaketen inkluderar videoinspelning, och detta kan även läggas till Grundpaketet mot en extra kostnad.'
+    }]} />
         </div>
       </Section>
       

@@ -1,34 +1,21 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
 
 interface UseCaseCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
-  className?: string;
-  iconColor?: string;
 }
 
-const UseCaseCard = ({ 
-  title, 
-  description, 
-  icon, 
-  className,
-  iconColor = "text-primary" 
-}: UseCaseCardProps) => {
+const UseCaseCard = ({ title, description, icon }: UseCaseCardProps) => {
   return (
-    <div className={cn(
-      'group px-6 py-8 rounded-lg transition-all duration-300 bg-white border border-border hover:bg-secondary/50',
-      className
-    )}>
-      <div className={cn("w-12 h-12 flex items-center justify-center rounded-full mb-5", iconColor)}>
-        {icon}
+    <div className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border hover:bg-secondary/50 transition-colors">
+      <div className="text-primary">{icon}</div>
+      <div>
+        <h3 className="text-xl font-medium mb-2">{title}</h3>
+        <p className="text-muted-foreground">{description}</p>
       </div>
-      
-      <h3 className="text-xl font-medium mb-3">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
     </div>
   );
 };
